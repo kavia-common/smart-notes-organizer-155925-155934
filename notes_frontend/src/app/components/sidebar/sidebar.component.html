@@ -1,0 +1,18 @@
+<aside class="sidebar">
+  <nav class="folders">
+    <div class="section-title">Folders</div>
+    <ul>
+      <li
+        *ngFor="let f of folders"
+        (click)="onSelect(f)"
+        [class.active]="f === selectedFolder"
+        tabindex="0"
+        role="button"
+        [attr.aria-pressed]="f === selectedFolder"
+      >
+        <span class="folder-icon">📁</span>
+        <span class="name">{{ f }}</span>
+      </li>
+    </ul>
+  </nav>
+</aside>

@@ -1,0 +1,34 @@
+<div class="app-shell">
+  <app-top-nav
+    (searchChange)="onSearch($event)"
+    (newNote)="onNewNote()"
+  ></app-top-nav>
+
+  <div class="content">
+    <app-sidebar
+      class="sidebar"
+      [folders]="(folders$ | async) ?? []"
+      [selectedFolder]="selectedFolder$ | async"
+      (folderChange)="onFolderChange($event)"
+    ></app-sidebar>
+
+    <main class="main">
+      <section class="list-pane">
+        <app-notes-list
+          [notes]="filteredNotes$ | async"
+          [selectedNoteId]="selectedNoteId$ | async"
+          (selectNote)="onSelectNote($event)"
+          (deleteNote)="onDeleteNote($event)"
+          (togglePinned)="onTogglePinned($event)"
+        ></app-notes-list>
+      </section>
+      <section class="editor-pane">
+        <app-note-editor
+          [note]="selectedNote$ | async"
+          (saveNote)="onSaveNote($event)"
+          (deleteNote)="onDeleteNote($event)"
+        ></app-note-editor>
+      </section>
+    </main>
+  </div>
+</div>

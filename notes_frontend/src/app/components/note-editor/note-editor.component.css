@@ -1,0 +1,105 @@
+.editor-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.title {
+  flex: 1;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 600;
+  box-shadow: var(--elevation-1);
+}
+
+.folder {
+  width: 180px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--elevation-1);
+}
+
+.content {
+  flex: 1;
+  resize: none;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--elevation-1);
+  line-height: 1.5;
+}
+
+.btn {
+  height: 44px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: var(--elevation-1);
+  transition: transform 0.05s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: var(--elevation-0);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-danger {
+  background: #ef5350;
+  color: #fff;
+}
+
+.no-selection {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--color-muted-strong);
+}
+
+.placeholder-card {
+  text-align: center;
+  padding: 24px;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+}
+
+.placeholder-card .emoji {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.placeholder-card .title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.placeholder-card .subtitle {
+  color: var(--color-muted);
+}
