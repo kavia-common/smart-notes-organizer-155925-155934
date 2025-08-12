@@ -1,0 +1,29 @@
+<div class="notes-list">
+  <ng-container *ngIf="notes && notes.length; else empty">
+    <div
+      class="note-item"
+      *ngFor="let n of notes; trackBy: trackById"
+      [class.active]="n.id === selectedNoteId"
+      (click)="onSelect(n.id)"
+      tabindex="0"
+      role="button"
+      [attr.aria-pressed]="n.id === selectedNoteId"
+    >
+      <div class="row1">
+        <div class="title">
+          <span *ngIf="n.pinned" class="pin">📌</span>{{ n.title || 'Untitled Note' }}
+        </div>
+        <div class="actions">
+          <button class="icon" (click)="onTogglePinned(n.id, $event)" title="Pin/Unpin">📌</button>
+          <button class="icon danger" (click)="onDelete(n.id, $event)" title="Delete">🗑️</button>
+        </div>
+      </div>
+      <div class="snippet">{{ n.content || 'Empty note' }}</div>
+      <div class="meta">{{ n.folder || 'No folder' }} • {{ n.updatedAt | date:'short' }}</div>
+    </div>
+  </ng-container>
+
+  <ng-template #empty>
+    <div class="empty">No notes yet. Create one to get started.</div>
+  </ng-template>
+</div>

@@ -1,0 +1,21 @@
+<header class="top-nav">
+  <div class="brand">
+    <div class="logo">📝</div>
+    <div class="name">Smart Notes</div>
+  </div>
+
+  <div class="search">
+    <input
+      type="text"
+      placeholder="Search notes..."
+      (input)="onSearch($event)"
+      aria-label="Search notes"
+    />
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-accent" (click)="onNewNote()" aria-label="Create new note">
+      + New Note
+    </button>
+  </div>
+</header>

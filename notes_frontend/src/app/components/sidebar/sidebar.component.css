@@ -1,0 +1,47 @@
+.sidebar {
+  width: 240px;
+  padding: 16px 12px;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+}
+
+.folders ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.folders li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: background 0.2s ease, transform 0.05s ease;
+}
+
+.folders li:hover {
+  background: var(--color-hover);
+}
+
+.folders li.active {
+  background: rgba(25, 118, 210, 0.14); /* primary with opacity */
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.folder-icon {
+  display: inline-flex;
+  width: 18px;
+}

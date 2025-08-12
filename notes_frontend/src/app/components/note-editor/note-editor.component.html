@@ -1,0 +1,26 @@
+<div class="editor-container" *ngIf="model; else noSelection">
+  <div class="toolbar">
+    <input class="title" [(ngModel)]="model!.title" placeholder="Note title" />
+    <div class="toolbar-actions">
+      <input class="folder" [(ngModel)]="model!.folder" placeholder="Folder (optional)" />
+      <button class="btn btn-primary" (click)="onSave()">Save</button>
+      <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+
+  <textarea
+    class="content"
+    [(ngModel)]="model!.content"
+    placeholder="Start typing your note..."
+  ></textarea>
+</div>
+
+<ng-template #noSelection>
+  <div class="no-selection">
+    <div class="placeholder-card">
+      <div class="emoji">✨</div>
+      <div class="title">Welcome to Smart Notes</div>
+      <div class="subtitle">Select a note from the list or create a new one to begin.</div>
+    </div>
+  </div>
+</ng-template>
