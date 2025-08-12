@@ -1,0 +1,4 @@
+{
+    "command": "npm install && npm run build",
+    "working_directory": "/home/kavia/workspace/code-generation/smart-notes-organizer-155925-155934/notes_frontend"
+}
